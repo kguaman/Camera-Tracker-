@@ -1,3 +1,6 @@
+'''
+curently trying to send the data to Arduino and have the motors move. 
+'''
 import cv2
 import numpy as np
 import time
@@ -45,15 +48,10 @@ def tracker(info,w,h):
     # x & y postion of the circle on face
     # x would be indicate the face postion
     # w is the width of the img which is divided by
-
-    # error would be the offset from the center.
-    #error = error - prev_error
-    #error= x-window_list[0]
-
-    #if x == 0:
-        #error = 0
+    
+    change the position value to an angle to pass to the motor
     '''
-     x,y = info[0] 
+    x,y = info[0] 
     X_angle =round( x / (width/180))
     Y_angle =round( y / (height/180))
     datasend = "X:{0},Y:{1}".format(X_angle,Y_angle)
